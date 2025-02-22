@@ -4,9 +4,9 @@ const timerDisplay = document.getElementById('timer');
 const scoreDisplay = document.getElementById('score');
 const startBtn = document.getElementById('start-btn');
 
-const easyWords = ["apple", "banana", "orange", "grape", "peach", "kiwi", "blue", "melon", "mango", "plum"];
+const easyWords = ["apple", "speed", "change", "can", "cannot", "banana", "orange", "grape", "peach", "kiwi", "blue", "melon", "mango", "plum"];
 const mediumWords = ["furniture", "elephant", "mountain", "computer", "astronomy", "pineapple", "chocolate", "triangle"];
-const hardWords = ["architecture", "encyclopedia", "consciousness", "philosophy", "transformation", "unpredictable", "responsibility"];
+const hardWords = ["architecture", "encyclopedia", "television", "consciousness", "philosophy", "transformation", "unpredictable", "responsibility"];
 
 let currentWord = '';
 let score = 0;
