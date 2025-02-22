@@ -2,22 +2,27 @@ const wordDisplay = document.getElementById('word-display');
 const inputField = document.getElementById('input-field');
 const timerDisplay = document.getElementById('timer');
 const scoreDisplay = document.getElementById('score');
+const startBtn = document.getElementById('start-btn');
 
 const words = ["apple", "banana", "orange", "grape", "watermelon", "strawberry", "kiwi", "blueberry", "peach", "pineapple"];
 let currentWord = '';
 let score = 0;
 let time = 0;
-let gameStarted = false;
 let timerInterval;
+let gameStarted = false;
+
+startBtn.addEventListener('click', startGame);
 
 function startGame() {
     score = 0;
     time = 0;
     gameStarted = true;
-    scoreDisplay.textContent = `Score: ${score}`;
-    timerDisplay.textContent = `Time: ${time}`;
     inputField.value = '';
     inputField.disabled = false;
+    inputField.focus();
+    scoreDisplay.textContent = `Score: ${score}`;
+    timerDisplay.textContent = `Time: ${time}`;
+    startBtn.disabled = true;
     generateNewWord();
     startTimer();
 }
@@ -38,10 +43,8 @@ function generateNewWord() {
 }
 
 inputField.addEventListener('input', () => {
-    if (!gameStarted) startGame();
-
     const typedWord = inputField.value.trim();
-    
+
     if (typedWord === currentWord) {
         score++;
         scoreDisplay.textContent = `Score: ${score}`;
@@ -51,5 +54,5 @@ inputField.addEventListener('input', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    inputField.disabled = true; // Disable input until game starts
+    inputField.disabled = true;
 });
