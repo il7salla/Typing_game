@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f1e1; /* Beige background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    text-align: center;
+    background-color: #e4d8f5; /* Light purple background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #6a4c9c; /* Darker purple for heading */
+}
+
+#word-display {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #6a4c9c; /* Dark purple for the word */
+}
+
+#input-field {
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+    margin: 10px 0;
+    border: 2px solid #d0a6e3; /* Light purple border */
+    border-radius: 5px;
+}
+
+#input-field:focus {
+    border-color: #9b6ba8; /* Darker purple on focus */
+    outline: none;
+}
+
+#timer, #score {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #6a4c9c; /* Dark purple for text */
+}
