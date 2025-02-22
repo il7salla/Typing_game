@@ -4,7 +4,10 @@ const timerDisplay = document.getElementById('timer');
 const scoreDisplay = document.getElementById('score');
 const startBtn = document.getElementById('start-btn');
 
-const words = ["apple", "banana", "orange", "grape", "watermelon", "strawberry", "kiwi", "blueberry", "peach", "pineapple"];
+const easyWords = ["apple", "banana", "orange", "grape", "peach", "kiwi", "blue", "melon", "mango", "plum"];
+const mediumWords = ["furniture", "elephant", "mountain", "computer", "astronomy", "pineapple", "chocolate", "triangle"];
+const hardWords = ["architecture", "encyclopedia", "consciousness", "philosophy", "transformation", "unpredictable", "responsibility"];
+
 let currentWord = '';
 let score = 0;
 let time = 0;
@@ -37,8 +40,18 @@ function startTimer() {
 }
 
 function generateNewWord() {
-    const randomIndex = Math.floor(Math.random() * words.length);
-    currentWord = words[randomIndex];
+    let wordPool;
+
+    if (score < 5) {
+        wordPool = easyWords;
+    } else if (score < 10) {
+        wordPool = mediumWords;
+    } else {
+        wordPool = hardWords;
+    }
+
+    const randomIndex = Math.floor(Math.random() * wordPool.length);
+    currentWord = wordPool[randomIndex];
     wordDisplay.textContent = currentWord;
 }
 
